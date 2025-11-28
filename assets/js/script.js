@@ -8,7 +8,8 @@ const versiculos = [
     '"O Senhor é o meu pastor, nada me faltará." – Salmos 23:1',
     '"Entrega o teu caminho ao Senhor; confia nele, e ele o fará." – Salmos 37:5',
     '"Alegrai-vos na esperança, sede pacientes na tribulação, perseverai na oração." – Romanos 12:12',
-    '"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho." – Salmos 119:105'
+    '"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho." – Salmos 119:105',
+    '"Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar" - Josué 1:9'
 ];
 
 const elemento = document.getElementById("versiculo");
@@ -16,7 +17,7 @@ let index = 0;
 
 setTimeout(() => {
     elemento.style.animation = "none";
-}, 1600); 
+}, 1600);
 
 setInterval(() => {
     // fade-out
