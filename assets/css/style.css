@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-body: linear-gradient(135deg, #2c3e50, #4ca1af);
+    --color-span: #F4E2D8;
+    --color-p: #f4a460;
+    --color-destaque: #FFD700;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--background-body);
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+menu-nav {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--color-destaque);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 1.6rem 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--color-span);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.menu li a:hover {
+    color: var(--color-destaque);
+    transform: scale(1.05);
+}
+
+/* Ícone hambúrguer escondido no desktop */
+.menu-btn {
+    display: none;
+}
+
+.ola-mundo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3.5rem;
+    flex: 1;
+}
+
+.ola-mundo p {
+    margin: 0.3rem 0;
+    font-size: 2.5rem;
+    color: var(--color-p);
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+span,
+.ola-mundo p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.ola-mundo p:hover,
+span:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+span {
+    font-size: 40px;
+    color: var(--color-span);
+    font-weight: 300;
+}
+
+.destaque {
+    color: var(--color-destaque);
+    animation: brilho 2s infinite;
+    font-weight: bold;
+}
+
+.versiculo {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.8rem;
+    border-left: 4px solid #FFD700;
+    border-radius: 8px;
+    margin-top: 2rem;
+    max-width: 600px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+#versiculo {
+    animation: slideInRight 1.5s ease-out forwards;
+    transition: opacity 0.6s ease-in-out;
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    border-top: 2px solid #FFD700;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#saudacao {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Define a animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplica a animação ao elemento */
+.fade-in {
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    opacity: 0;
+    /* começa invisível */
+    animation: slideIn 2s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.emoji {
+    display: inline-block;
+    animation: flutuar 2.5s ease-in-out infinite;
+}
+
+@keyframes brilho {
+    0% {
+        text-shadow: 0 0 5px #FFD700;
+    }
+
+    50% {
+        text-shadow: 0 0 20px #FFD700;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #FFD700;
+    }
+}
+
+@keyframes fadeBody {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*Responsividade */
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .ola-mundo {
+        margin-top: 7rem;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    /* NAV adapta no mobile */
+    .menu-nav {
+        display: flex;
+        justify-content: flex-start !important;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Botão hamburguer no canto DIREITO */
+    .menu-btn {
+        display: block;
+        position: fixed;
+        /* Fica fixo na tela */
+        right: 1rem;
+        /* <<<<< MUDA PARA O LADO DIREITO */
+        top: 1rem;
+        font-size: 2.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 3000;
+    }
+
+    /* Some quando o menu abre */
+    .menu-btn.hide {
+        display: none !important;
+    }
+
+    /* Menu lateral esquerdo */
+    .menu {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 50%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        padding-left: 2rem;
+        gap: 2rem;
+        background: rgba(20, 20, 20, 0.95);
+        border-right: 2px solid var(--color-destaque);
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+        z-index: 2500;
+    }
+
+    .menu.show {
+        transform: translateX(0);
+    }
+
+    /* Botão X */
+    .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--color-span);
+        cursor: pointer;
+        z-index: 2600;
+        display: block;
+    }
+
+    /* Overlay escuro */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 2000;
+    }
+
+    .overlay.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media (min-width: 601px) {
+    .menu-btn {
+        display: none !important;
+    }
+
+    .close-btn {
+        display: none;
+    }
+}
