@@ -260,7 +260,7 @@ footer {
         /* Fica fixo na tela */
         right: 1rem;
         /* <<<<< MUDA PARA O LADO DIREITO */
-        top: 1rem;
+        top: 0.5rem;
         font-size: 2.5rem;
         background: none;
         border: none;
