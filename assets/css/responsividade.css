@@ -1,0 +1,117 @@
+/*Responsividade */
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .ola-mundo {
+        margin-top: 7rem;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    /* NAV adapta no mobile */
+    .menu-nav {
+        display: flex;
+        justify-content: flex-start !important;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Botão hamburguer no canto DIREITO */
+    .menu-btn {
+        display: block;
+        position: fixed;
+        /* Fica fixo na tela */
+        right: 1rem;
+        /* <<<<< MUDA PARA O LADO DIREITO */
+        top: 0.5rem;
+        font-size: 2.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 3000;
+    }
+
+    /* Some quando o menu abre */
+    .menu-btn.hide {
+        display: none !important;
+    }
+
+    /* Menu lateral esquerdo */
+    .menu {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 50%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        padding-left: 2rem;
+        gap: 2rem;
+        background: rgba(20, 20, 20, 0.95);
+        border-right: 2px solid var(--color-destaque);
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+        z-index: 2500;
+    }
+
+    .menu.show {
+        transform: translateX(0);
+    }
+
+    /* Botão X */
+    .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--color-span);
+        cursor: pointer;
+        z-index: 2600;
+        display: block;
+    }
+
+    /* Overlay escuro */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 2000;
+    }
+
+    .overlay.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media (min-width: 601px) {
+    .menu-btn {
+        display: none !important;
+    }
+
+    .close-btn {
+        display: none;
+    }
+}
