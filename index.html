@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/biblia.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <title>Bom dia, Espirito Santo</title>
 </head>
 
 <body>
+
     <header>
         <nav class="menu-nav">
 
@@ -27,16 +33,23 @@
                 <li><a href="#">Início</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Contato</a></li>
+
+                <!-- BOTÃO MODO LUZ / NOITE -->
+                <li class="tema-item">
+                    <button id="toggleTheme" class="btn-tema">
+                        <i id="iconTheme" class="fa-solid fa-sun"></i>
+                        <span class="modo">Modo</span>
+                    </button>
+                </li>
             </ul>
+
         </nav>
     </header>
 
-
-
     <main class="ola-mundo">
         <p class="fade-in" id="saudacao"></p>
-        <span class="slide-in">Espirito <span class="destaque">S</span>anto<span class="emoji">🕊️</span>
-            !!!</span>
+        <span class="slide-in">Espirito <span class="destaque">S</span>anto<span class="emoji">🕊️</span></span>
+
         <blockquote class="versiculo" id="versiculo">
             "Bem-aventurados os mansos, porque herdarão a terra." – Mateus 5:5
         </blockquote>

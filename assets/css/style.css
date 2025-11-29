@@ -11,12 +11,32 @@
     --color-destaque: #FFD700;
 }
 
+
+/* ===================== */
+/*        MODO ESCURO     */
+/* ===================== */
+
+.dark-mode {
+    --background-body: #0d0d0d;
+    --color-span: #e6e6e6;
+    --color-p: #ffcc66;
+    --color-destaque: #ffd84d;
+}
+
+/* Força o fundo do body no dark */
+.dark-mode body {
+    background: var(--background-body) !important;
+    color: var(--color-span);
+}
+
+
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: var(--background-body);
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     height: 100vh;
 }
 
@@ -133,6 +153,56 @@ footer {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
+/* Container do item */
+.tema-item {
+    list-style: none;
+}
+
+/* Botão principal */
+.btn-tema {
+    background: transparent;
+    border: none;
+    color: var(--color-span);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: .4rem .8rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Ícone */
+.btn-tema i {
+    font-size: 1.4rem;
+    transition: 0.3s ease;
+}
+
+/* Texto "Modo" */
+.btn-tema .modo {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Hover bonito */
+.btn-tema:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Clique suave */
+.btn-tema:active {
+    transform: scale(0.96);
+}
+
+/* Tema dark – deixa mais integrado */
+.dark-mode .btn-tema:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 
 /* Define a animação */
 @keyframes fadeIn {
