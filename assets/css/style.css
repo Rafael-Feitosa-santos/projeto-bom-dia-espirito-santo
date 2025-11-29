@@ -1,5 +1,4 @@
 @import url(modo-escuro.css);
-@import url(responsividade.css);
 
 * {
     margin: 0;
@@ -23,9 +22,9 @@ body {
     height: 100vh;
 }
 
-menu-nav {
+.menu-nav {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 1rem 0;
+    padding: 0;
     border-bottom: 2px solid var(--color-destaque);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
